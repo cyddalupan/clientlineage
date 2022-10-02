@@ -1,2 +1,17 @@
-<p>wiki works!</p>
-<button (click)="submit()">Save Trigger</button>
+<h1 class="title">Wiki</h1>
+<h4>Tags</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Filter by Tags</mat-label>
+  <mat-select>
+    <mat-option value="option1">Option 1</mat-option>
+    <mat-option value="option3">Option 3</mat-option>
+  </mat-select>
+</mat-form-field>
+{{(allWiki | async | json)}}
+<mat-list>
+  <mat-list-item *ngFor="let wiki of (allWiki | async)">
+    <mat-icon mat-list-icon>note</mat-icon>
+    <div mat-line>{{ wiki.title }}</div>
+    <div mat-line> Date sample </div>
+  </mat-list-item>
+</mat-list>

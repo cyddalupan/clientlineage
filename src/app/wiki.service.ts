@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +15,7 @@ export class WikiService {
 
   constructor(private http: HttpClient) { }
 
-  getall() {
+  getall(): Observable<any> {
     return this.http.get("http://127.0.0.1:8000/api/wikibase/");
   }
 

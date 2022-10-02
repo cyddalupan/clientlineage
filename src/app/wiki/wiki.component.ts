@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { WikiService } from '../wiki.service';
 
 @Component({
@@ -6,15 +7,11 @@ import { WikiService } from '../wiki.service';
   templateUrl: './wiki.component.html',
   styleUrls: ['./wiki.component.css']
 })
-export class WikiComponent implements OnInit {
+export class WikiComponent {
+
+  public allWiki = this.wikiService.getall();
 
   constructor(public wikiService: WikiService) { }
-
-  ngOnInit(): void {
-    this.wikiService.getall().subscribe(log => {
-      console.log("FIRST LOG",log);
-    });
-  }
 
   submit() {
     this.wikiService.deleteBase().subscribe(ret => {
