@@ -3,13 +3,11 @@
 <mat-form-field appearance="fill">
   <mat-label>Filter by Tags</mat-label>
   <mat-select>
-    <mat-option value="option1">Option 1</mat-option>
-    <mat-option value="option3">Option 3</mat-option>
+    <mat-option *ngFor="let tag of (tags | async)" value="tag">{{ tag }}</mat-option>
   </mat-select>
 </mat-form-field>
-{{(allWiki | async | json)}}
 <mat-list>
-  <mat-list-item *ngFor="let wiki of (allWiki | async)">
+  <mat-list-item *ngFor="let wiki of (allWiki | async).results">
     <mat-icon mat-list-icon>note</mat-icon>
     <div mat-line>{{ wiki.title }}</div>
     <div mat-line> Date sample </div>

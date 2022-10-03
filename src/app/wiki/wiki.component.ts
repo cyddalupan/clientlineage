@@ -9,7 +9,8 @@ import { WikiService } from '../wiki.service';
 })
 export class WikiComponent {
 
-  public allWiki = this.wikiService.getall();
+  public allWiki = this.wikiService.getAll();
+  public tags = this.wikiService.getTags();
 
   constructor(public wikiService: WikiService) { }
 
