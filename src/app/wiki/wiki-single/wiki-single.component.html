@@ -1,0 +1,12 @@
+<p>wiki-single works!</p>
+
+<div *ngIf="(wikiBase | async) as base">
+  <a [routerLink]="['/wiki/'+base.id+'/edit']">Edit this page</a>
+
+  <h1>
+    {{ base?.title }}
+  </h1>
+  <p>
+    {{ base?.content }}
+  </p>
+</div>

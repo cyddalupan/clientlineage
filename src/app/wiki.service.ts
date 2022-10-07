@@ -15,8 +15,16 @@ export class WikiService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get("http://127.0.0.1:8000/api/wikibase/");
+  getAll(currentpage: number): Observable<any> {
+    return this.http.get("http://127.0.0.1:8000/api/wikibase/?page="+currentpage);
+  }
+
+  getOneBase(id: number): Observable<any> {
+    return this.http.get("http://127.0.0.1:8000/api/wikibase/"+id);
+  }
+
+  getOneContent(id: number): Observable<any> {
+    return this.http.get("http://127.0.0.1:8000/api/wikibase/"+id+"/content/");
   }
 
   getTags(): Observable<any> {

@@ -13,16 +13,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { CommonModule } from '@angular/common';
+import { WikiSingleComponent } from './wiki/wiki-single/wiki-single.component';
+import { WikiEditComponent } from './wiki/wiki-edit/wiki-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WikiComponent
+    WikiComponent,
+    WikiSingleComponent,
+    WikiEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatListModule,
     MatSelectModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

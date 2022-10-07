@@ -7,9 +7,17 @@
   </mat-select>
 </mat-form-field>
 <mat-list>
-  <mat-list-item *ngFor="let wiki of (allWiki | async).results">
-    <mat-icon mat-list-icon>note</mat-icon>
-    <div mat-line>{{ wiki.title }}</div>
-    <div mat-line> Date sample </div>
-  </mat-list-item>
+  <a *ngFor="let wiki of (allWiki | async)?.results" [routerLink]="['/wiki/'+wiki.id]">
+    <mat-list-item>
+        <mat-icon mat-list-icon>note</mat-icon>
+        <div mat-line>{{ wiki.title }}</div>
+        <div mat-line>{{ wiki.tags }}</div>
+    </mat-list-item>
+  </a>
 </mat-list>
+<mat-paginator
+  [length]="(allWiki | async)?.count"
+  [pageSize]="10"
+  (page)="handlePageEvent($event)"
+  aria-label="Select page">
+</mat-paginator>
