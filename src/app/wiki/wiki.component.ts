@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { WikiService } from '../wiki.service';
+import { WikiService } from './wiki.service';
 
 @Component({
   selector: 'app-wiki',
@@ -19,7 +19,7 @@ export class WikiComponent {
   }
 
   submit() {
-    this.wikiService.deleteBase().subscribe(ret => {
+    this.wikiService.delete().subscribe(ret => {
       console.log("Return", ret);
     });
   }
