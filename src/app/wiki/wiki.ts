@@ -3,4 +3,5 @@ export interface Wiki {
   title: string;
   content: string;
   tags: string;
+  author_id: number;
 }

@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { WikiComponent } from './wiki/wiki.component';
 import { CommonModule } from '@angular/common';
 import { WikiSingleComponent } from './wiki/wiki-single/wiki-single.component';
 import { WikiEditComponent } from './wiki/wiki-edit/wiki-edit.component';
+import { WikiCreateComponent } from './wiki/wiki-create/wiki-create.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { WikiEditComponent } from './wiki/wiki-edit/wiki-edit.component';
     WikiComponent,
     WikiSingleComponent,
     WikiEditComponent,
+    WikiCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { WikiEditComponent } from './wiki/wiki-edit/wiki-edit.component';
     MatListModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

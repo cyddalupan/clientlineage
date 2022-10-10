@@ -1,0 +1,21 @@
+<p>wiki-create works!</p>
+
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput  [(ngModel)]="wiki.title">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Content</mat-label>
+    <textarea matInput  [(ngModel)]="wiki.content"></textarea>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Tags</mat-label>
+    <input matInput  [(ngModel)]="wiki.tags">
+  </mat-form-field>
+</p>
+<button (click)="save()">save</button>

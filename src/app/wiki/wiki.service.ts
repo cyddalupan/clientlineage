@@ -29,18 +29,14 @@ export class WikiService {
     return this.http.get<string>("http://127.0.0.1:8000/api/wiki/tags/");
   }
 
-  add() {
-    const sampleAdd = {
-      title: "second title",
-      folder: 1
-    };
-    return this.http.post("http://127.0.0.1:8000/api/wiki/", sampleAdd, httpOptions)
-      .pipe(catchError(async (err) => console.error("addBase",err)));
+  add(wiki: Wiki) {
+    return this.http.post("http://127.0.0.1:8000/api/wiki/", wiki, httpOptions)
+      .pipe(catchError(async (err) => err));
   }
 
   edit(wiki: Wiki) {
     return this.http.put("http://127.0.0.1:8000/api/wiki/"+wiki.id+"/", wiki, httpOptions)
-      .pipe(catchError(async (err) => console.error("editBase",err)));
+      .pipe(catchError(async (err) => err));
   }
 
   delete() {
