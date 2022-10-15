@@ -1,5 +1,12 @@
-<h1 class="title">Wiki</h1>
+<div class="title">
+  <mat-icon>auto_stories</mat-icon>
+   Wiki
+</div>
 <h4>Tags</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput  [(ngModel)]="search" (ngModelChange)="searchTrigger()">
+</mat-form-field>
 <mat-form-field appearance="fill">
   <mat-label>Filter by Tags</mat-label>
   <mat-select>
@@ -7,11 +14,12 @@
   </mat-select>
 </mat-form-field>
 <mat-list>
-  <a *ngFor="let wiki of (allWiki | async)?.results" [routerLink]="['/wiki/'+wiki.id]">
+  <a *ngFor="let wiki of (allWiki | async)?.results">
     <mat-list-item>
         <mat-icon mat-list-icon>note</mat-icon>
-        <div mat-line>{{ wiki.title }}</div>
+        <div mat-line  [routerLink]="['/wiki/'+wiki.id]">{{ wiki.title }}</div>
         <div mat-line>{{ wiki.tags }}</div>
+        <mat-icon mat-list-icon (click)="delete(wiki.id)">delete</mat-icon>
     </mat-list-item>
   </a>
 </mat-list>

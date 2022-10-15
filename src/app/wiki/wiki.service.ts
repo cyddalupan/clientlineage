@@ -17,8 +17,8 @@ export class WikiService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(currentpage: number): Observable<any> {
-    return this.http.get("http://127.0.0.1:8000/api/wiki/?page="+currentpage);
+  getAll(currentpage: number, search: string): Observable<any> {
+    return this.http.get("http://127.0.0.1:8000/api/wiki/?page="+currentpage+"&search="+search);
   }
 
   getOne(id: number): Observable<Wiki> {
@@ -39,8 +39,8 @@ export class WikiService {
       .pipe(catchError(async (err) => err));
   }
 
-  delete() {
-    return this.http.delete("http://127.0.0.1:8000/api/wiki/3/", httpOptions)
-      .pipe(catchError(async (err) => console.error("deleteBase",err)));
+  delete(id: number) {
+    return this.http.delete("http://127.0.0.1:8000/api/wiki/"+id+"/", httpOptions)
+      .pipe(catchError(async (err) => err));
   }
 }

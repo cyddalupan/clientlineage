@@ -1,13 +1,17 @@
+
 <mat-drawer-container class="container" autosize>
   <mat-drawer #drawer class="sidenav" mode="side">
-    <mat-list role="list">
+    <mat-list class="menus" role="list">
       <mat-list-item role="listitem">
         <a [routerLink]="['/wiki']">
+          <mat-icon>auto_stories</mat-icon>
           Wiki
         </a>
       </mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
+      <mat-list-item role="listitem">[SOON]Notes</mat-list-item>
+      <mat-list-item role="listitem">[SOON]Calendar</mat-list-item>
+      <mat-list-item role="listitem">[SOON]Video</mat-list-item>
+      <mat-list-item role="listitem">[SOON]Storage</mat-list-item>
     </mat-list>
   </mat-drawer>
   <div class="sidenav-content">
@@ -15,13 +19,10 @@
       <button mat-icon-button class="icon" aria-label="Example icon-button with menu icon">
         <mat-icon (click)="drawer.toggle()">menu</mat-icon>
       </button>
-      <span>My App</span>
+      <span class="app-name">Seed</span>
       <span class="spacer"></span>
-      <button mat-icon-button class="icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
+      <button mat-icon-button aria-label="Profile">
+        <mat-icon>account_circle</mat-icon>
       </button>
     </mat-toolbar>
     <div class="outlet">

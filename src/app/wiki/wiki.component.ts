@@ -8,19 +8,29 @@ import { WikiService } from './wiki.service';
   styleUrls: ['./wiki.component.css']
 })
 export class WikiComponent {
-  public currentpage = 1;
-  public allWiki = this.wikiService.getAll(this.currentpage);
+  public search = "";
+  public page = 1;
+  public allWiki = this.wikiService.getAll(this.page, this.search);
   public tags = this.wikiService.getTags();
+  public timeout: any = null;
 
   constructor(public wikiService: WikiService) { }
 
   handlePageEvent(page: any) {
-    this.allWiki = this.wikiService.getAll(page.pageIndex+1);
+    this.page = page.pageIndex+1
+    this.allWiki = this.wikiService.getAll(this.page, this.search);
   }
 
-  submit() {
-    this.wikiService.delete().subscribe(ret => {
-      console.log("Return", ret);
+  searchTrigger() {
+    if (this.timeout) window.clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.allWiki = this.wikiService.getAll(this.page, this.search);
+    }, 2000);
+  }
+
+  delete(id: number) {
+    this.wikiService.delete(id).subscribe(res => {
+      this.allWiki = this.wikiService.getAll(this.page, this.search);
     });
   }
 
