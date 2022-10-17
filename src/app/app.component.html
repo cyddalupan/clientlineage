@@ -15,11 +15,17 @@
     </mat-list>
   </mat-drawer>
   <div class="sidenav-content">
-    <mat-toolbar>
+    <mat-toolbar color="primary">
       <button mat-icon-button class="icon" aria-label="Example icon-button with menu icon">
         <mat-icon (click)="drawer.toggle()">menu</mat-icon>
       </button>
-      <span class="app-name">Seed</span>
+      <span class="spacer"></span>
+      <span class="app-name">
+        <mat-icon>
+          diversity_2
+        </mat-icon>
+        Lineage
+      </span>
       <span class="spacer"></span>
       <button mat-icon-button aria-label="Profile">
         <mat-icon>account_circle</mat-icon>
