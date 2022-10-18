@@ -2,12 +2,12 @@
   <mat-icon>auto_stories</mat-icon>
    Wiki
 </div>
-<h4>Tags</h4>
-<mat-form-field appearance="fill">
+<h4>Filters</h4>
+<mat-form-field>
   <mat-label>Search</mat-label>
   <input matInput  [(ngModel)]="search" (ngModelChange)="searchTrigger()">
 </mat-form-field>
-<mat-form-field appearance="fill">
+<mat-form-field>
   <mat-label>Filter by Tags</mat-label>
   <mat-select>
     <mat-option *ngFor="let tag of (tags | async)" value="tag">{{ tag }}</mat-option>
