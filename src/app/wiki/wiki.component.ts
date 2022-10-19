@@ -13,6 +13,7 @@ export class WikiComponent {
   public allWiki = this.wikiService.getAll(this.page, this.search);
   public tags = this.wikiService.getTags();
   public timeout: any = null;
+  public displayedColumns = ['id', 'title', 'delete'];
 
   constructor(public wikiService: WikiService) { }
 

@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { WikiCreateComponent } from './wiki/wiki-create/wiki-create.component';
     MatSelectModule,
     MatPaginatorModule,
     MatSnackBarModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
