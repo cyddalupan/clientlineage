@@ -42,3 +42,12 @@ table {
   height: 100px;
   width: 100px;
 }
+
+.delete-button {
+  cursor: pointer;
+}
+
+.add-group {
+  text-align: right;
+  margin: 30px;
+}

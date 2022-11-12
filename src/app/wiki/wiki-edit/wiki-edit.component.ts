@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Wiki } from '../wiki';
 import { WikiService } from '../wiki.service';
@@ -24,7 +24,8 @@ export class WikiEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public wikiService: WikiService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.wiki$.subscribe(wiki => {
@@ -39,6 +40,8 @@ export class WikiEditComponent implements OnInit {
           Object.keys(res.error)[0].toUpperCase()+" : "+res.error[Object.keys(res.error)[0]][0],
           "Close"
         );
+      else
+        this.router.navigate(['/wiki/'+Number(this.route.snapshot.paramMap.get('id'))]);
     });
   }
 

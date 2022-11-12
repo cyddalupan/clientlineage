@@ -3,9 +3,9 @@
 html, body { height: 100%;  font-family: 'Patrick Hand', cursive !important;}
 body {
   margin: 0;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Sono', sans-serif;
 }
 
 .mat-typography, div, p, a, span {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Sono', sans-serif;
 }

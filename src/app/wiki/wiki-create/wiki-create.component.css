@@ -1,0 +1,19 @@
+mat-form-field {
+  width: 100%;
+}
+
+textarea {
+  min-height: 300px;
+}
+
+.create-group {
+  margin: 30px;
+}
+
+.action-group {
+  text-align: right;
+}
+
+.action-group button {
+  margin: 10px;
+}

@@ -1,12 +1,16 @@
-<p>wiki-single works!</p>
-
-<div *ngIf="(wiki$ | async) as wiki">
-  <a [routerLink]="['/wiki/'+wiki.id+'/edit']">Edit this page</a>
-
+<button mat-button [routerLink]="['/wiki']">
+  <mat-icon>
+    arrow_back_ios
+  </mat-icon>
+  Back
+</button>
+<br><br>
+<div *ngIf="(wiki$ | async) as wiki" class="wiki-group">
   <h1>
     {{ wiki?.title }}
   </h1>
   <p>
     {{ wiki?.content }}
   </p>
+  <a [routerLink]="['/wiki/'+wiki.id+'/edit']">Edit this page</a>
 </div>

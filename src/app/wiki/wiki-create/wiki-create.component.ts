@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Wiki } from '../wiki';
 import { WikiService } from '../wiki.service';
 
@@ -19,7 +20,8 @@ export class WikiCreateComponent implements OnInit {
 
   constructor(
     public wikiService: WikiService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +33,8 @@ export class WikiCreateComponent implements OnInit {
           Object.keys(res.error)[0].toUpperCase()+" : "+res.error[Object.keys(res.error)[0]][0],
           "Close"
         );
+      else
+        this.router.navigate(['/wiki']);
     });
   }
 

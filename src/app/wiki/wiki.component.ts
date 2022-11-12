@@ -30,9 +30,11 @@ export class WikiComponent {
   }
 
   delete(id: number) {
-    this.wikiService.delete(id).subscribe(res => {
-      this.allWiki = this.wikiService.getAll(this.page, this.search);
-    });
+    if (confirm("Are you sure you want to Delete?") == true) {
+      this.wikiService.delete(id).subscribe(res => {
+        this.allWiki = this.wikiService.getAll(this.page, this.search);
+      });
+    }
   }
 
 }

@@ -1,15 +1,26 @@
-<p>wiki-edit works!</p>
+<div class="create-group">
+  <h1>Edit Wiki</h1>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput  [(ngModel)]="wiki.title">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Content</mat-label>
+      <textarea matInput  [(ngModel)]="wiki.content"></textarea>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Tags</mat-label>
+      <input matInput  [(ngModel)]="wiki.tags">
+    </mat-form-field>
+  </p>
+  <div class="action-group">
+    <button mat-flat-button [routerLink]="['/wiki']">Back</button>
+    <button  mat-flat-button color="primary" (click)="save()">save</button>
+  </div>
+</div>
 
-<mat-form-field appearance="fill">
-  <mat-label>Title</mat-label>
-  <input matInput  [(ngModel)]="wiki.title">
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Content</mat-label>
-  <textarea matInput  [(ngModel)]="wiki.content"></textarea>
-</mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Tags</mat-label>
-  <input matInput  [(ngModel)]="wiki.tags">
-</mat-form-field>
-<button (click)="save()">save</button>
