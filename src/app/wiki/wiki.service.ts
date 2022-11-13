@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable } from 'rxjs';
+import { catchError, Observable, share } from 'rxjs';
 import { Wiki } from './wiki';
 
 const httpOptions = {
@@ -17,8 +17,11 @@ export class WikiService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(currentpage: number, search: string): Observable<any> {
-    return this.http.get("http://127.0.0.1:8000/api/wiki/?page="+currentpage+"&search="+search);
+  getAll(currentpage: number, search: string, tag: string): Observable<any> {
+    let tagquery = "";
+    if (tag !== "")
+      tagquery = "&tag="+tag;
+    return this.http.get("http://127.0.0.1:8000/api/wiki/?page="+currentpage+"&search="+search+tagquery).pipe(share());
   }
 
   getOne(id: number): Observable<Wiki> {
